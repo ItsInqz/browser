@@ -3,6 +3,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    user-select: none;
+}
+
+#myClock {
+    font-size: 90px;
+    color: #cac7ff;
+    transform: translate(0%,-50%);
 
 }
 
