@@ -1,83 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>New Tab</title>
-        <script type="text/javascript" src="script.js"></script>
-        <link rel="stylesheet" href="styles.css" />
-        <link rel="shortcut icon" href="images/favicon.ico" />
-    </head>
-    <body>
-        <div class="container">
-            <ul>
-                <li>
-                    <div class="extrapad" id = "myClock">
-                        <h1>aa</h1>
-                        <script type="text/javascript">
-                            clockTime();
-                        </script>
-                    </div>
-                </li>
-                <li>
-                    <div class="extrapad">
-                        <form
-                            action="https://www.google.com/search"
-                            method="GET"
-                            class="search-bar"
-                        >
-                            <input
-                                type="text"
-                                placeholder="google search"
-                                name="q"
-                                autocomplete="off"
-                            />
-                            <button type="submit">
-                                <img src="images/search.png" />
-                            </button>
-                        </form>
-                    </div>
-                </li>
-                <li>
-                    <div class="extrapad">
-                        <form
-                            action="https://www.namemc.com/search"
-                            method="GET"
-                            class="search-bar"
-                        >
-                            <input
-                                type="text"
-                                placeholder="namemc search"
-                                name="q"
-                                autocomplete="off"
-                            />
-                            <button type="submit">
-                                <img src="images/search.png" />
-                            </button>
-                        </form>
-                    </div>
-                </li>
-                <li>
-                    <div class="extrapad">
-                        <form
-                            action="https://www.youtube.com/results"
-                            method="GET"
-                            class="search-bar"
-                        >
-                            <input
-                                type="text"
-                                placeholder="youtube search"
-                                name="search_query"
-                                autocomplete="off"
-                            />
-                            <button type="submit">
-                                <img src="images/search.png" />
-                            </button>
-                        </form>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>New Tab</title>
+		<script type="text/javascript" src="script.js"></script>
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="shortcut icon" href="images/favicon.ico" />
+	</head>
+	<body>
+		<div class="container">
+			<ul>
+				<li>
+					<div class="open active extrapad txt" id="myClock">
+						00:00:00
+						<script type="text/javascript">
+							clockTime();
+						</script>
+					</div>
+				</li>
+				<li>
+					<div class="closed extrapad txt">
+						<div class="">
+							<form action="" method="GET" class="search-bar">
+								<input
+									type="text"
+									id="field"
+									class="hidebord"
+									placeholder="search url"
+								/>
+								<button id="myBtn"><img src="images/search.png" /></button>
+							</form>
+						</div>
+
+						<script type="text/javascript">
+							document
+								.getElementById("myBtn")
+								.addEventListener("click", function () {
+									const closedFace = document.querySelector(".closed");
+									const openFace = document.querySelector(".open");
+									function hide() {
+										openFace.classList.add("active");
+										closedFace.classList.remove("active");
+										console.log("closed");
+									}
+									var url = document.getElementById("field").value;
+									if (!url.includes(".")) return hide();
+									if (url.includes("://")) {
+										window.open(url);
+										hide();
+										return;
+									}
+									const secureURL = "https://" + url;
+									window.open(secureURL);
+								});
+						</script>
+					</div>
+				</li>
+				<script src="hiding.js"></script>
+				<li>
+					<div class="extrapad">
+						<form
+							action="https://www.google.com/search"
+							method="GET"
+							class="search-bar"
+						>
+							<input
+								type="text"
+								placeholder="google search"
+								name="q"
+								autocomplete="off"
+							/>
+							<button type="submit">
+								<img src="images/search.png" />
+							</button>
+						</form>
+					</div>
+				</li>
+				<li>
+					<div class="extrapad">
+						<form
+							action="https://www.namemc.com/search"
+							method="GET"
+							class="search-bar"
+						>
+							<input
+								type="text"
+								placeholder="namemc search"
+								name="q"
+								autocomplete="off"
+							/>
+							<button type="submit">
+								<img src="images/search.png" />
+							</button>
+						</form>
+					</div>
+				</li>
+				<li>
+					<div class="extrapad">
+						<form
+							action="https://www.youtube.com/results"
+							method="GET"
+							class="search-bar"
+						>
+							<input
+								type="text"
+								placeholder="youtube search"
+								name="search_query"
+								autocomplete="off"
+							/>
+							<button type="submit">
+								<img src="images/search.png" />
+							</button>
+						</form>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</body>
 </html>

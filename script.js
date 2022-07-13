@@ -25,3 +25,8 @@ function clockTime() {
 
 	setTimeout(clockTime, 1000);
 }
+
+
+function Test() {
+	alert("Hi")
+}

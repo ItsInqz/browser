@@ -40,6 +40,19 @@
     justify-content: center;
 }
 
+li{
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+ul{
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
 .extrapad{
     width: 100%;
     padding: 1vh;
@@ -55,6 +68,9 @@
     justify-content: center;
 }
 
+.hidebord {
+    border: none;
+}
 .search-bar{
     width: 100%;
     max-width: 700px;
@@ -87,6 +103,36 @@
 }
 
 .search-bar button {
+    border: 0;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background: #58629b;
+    cursor: pointer;
+}
+
+.closed {
+	display: none;
+}
+.open {
+	display: none;
+}
+
+.active {
+	width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.txt {
+    font-size: 11vh;
+    color: #cac7ff;
+    transform: translate(0%,-50%);
+
+}
+
+button {
     border: 0;
     border-radius: 50%;
     width: 60px;
